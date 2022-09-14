@@ -95,18 +95,18 @@ def makemydir(dirname):
   # let exception propagate if we just can't
   # cd into the specified directory
 #  os.chdir(dirname)
-CsvPath= inputdir+"\\Star_files"
+CsvPath= inputdir+"\\Files"
 
 makemydir(CsvPath)
 
-ziploc=inputdir+"\\"+str(today)+"-NXP-mpe.zip"
+ziploc=inputdir+"\\"+str(today)+"-New-mpe.zip"
 
 
 o = File(ziploc)
 
 
 # To zip the file 
-f=ZipFile(str(today)+"-NXP-mpe.zip",'w')
+f=ZipFile(str(today)+"-New-mpe.zip",'w')
 for root,dires,files in os.walk(inputdir):
     for csv_files_zip in glob.glob(os.path.join(inputdir,"*.csv*")):
         f.write(csv_files_zip,os.path.relpath(csv_files_zip, root))
